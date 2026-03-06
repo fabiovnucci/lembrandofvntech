@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lembrandofvntech | Documentação Semântica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primaria: #27ae60;
+            --secundaria: #2980b9;
+            --escura: #1a1a1a;
+            --fundo: #f4f4f4;
+            --bg-code: #2d2d2d;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--fundo); margin: 0; padding: 0; color: #333; }
+
+        /* HEADER SEMÂNTICO */
+        header { background: var(--escura); color: white; padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--primaria); }
+        
+        main { max-width: 1200px; margin: 40px auto; padding: 20px; }
+
+        /* CARDS COMO SEÇÕES E ARTIGOS */
+        section {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background: #eee;
+            padding: 15px 25px;
+            border-bottom: 2px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) { article { grid-template-columns: 1fr; } }
+
+        .explicacao h3 { color: var(--primaria); margin-top: 0; font-size: 1.8rem; }
+        .explicacao p { line-height: 1.6; color: #555; }
+        .explicacao ul { padding-left: 20px; }
+
+        /* BLOCO DE CÓDIGO SEMÂNTICO */
+        .codigo-box { background: var(--bg-code); color: #82aaff; padding: 20px; border-radius: 10px; font-family: 'monospace'; font-size: 0.9rem; margin-top: 15px; }
+        code { display: block; white-space: pre; }
+        .prop { color: #c792ea; } 
+        .val { color: #c3e88d; }
+
+        /* DEMONSTRAÇÃO VISUAL (ASIDE) */
+        aside {
+            background: #eef2f3;
+            border-radius: 10px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+
+        /* ESTILOS DOS EXEMPLOS */
+        .box-model-demo { border: 4px solid #333; padding: 30px; background: var(--primaria); color: white; font-weight: bold; position: relative; }
+        .flex-demo { display: flex; gap: 15px; background: white; padding: 15px; width: 100%; border: 2px solid #ccc; border-radius: 8px; }
+        .flex-item { background: var(--secundaria); color: white; padding: 15px; border-radius: 5px; flex: 1; text-align: center; }
+        .btn-hover { padding: 15px 30px; background: var(--primaria); color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.4s; font-weight: bold; }
+        .btn-hover:hover { background: var(--escura); transform: scale(1.1); }
+
+        footer { background: var(--escura); color: white; text-align: center; padding: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-layer-group"></i> lembrandofvntech</h1>
+        <p>A Bíblia Visual do CSS (Versão Semântica Profissional)</p>
+    </header>
+
+    <main>
+
+        <section id="box-model">
+            <div class="card-header">
+                <strong>01. O Modelo de Caixa (Box Model)</strong>
+                <span style="color: #888;">Tag: &lt;section&gt;</span>
+            </div>
+            <article>
+                <div class="explicacao">
+                    <h3>Margin vs Border vs Padding</h3>
+                    <p>O conceito mais importante para não quebrar o layout.</p>
+                    <ul>
+                        <li><strong>Margin:</strong> Espaço externo (afasta vizinhos).</li>
+                        <li><strong>Border:</strong> A linha de contorno.</li>
+                        <li><strong>Padding:</strong> Espaço interno (respiro do conteúdo).</li>
+                    </ul>
+                    <div class="codigo-box">
+                        <code><span class="prop">margin</span>: <span class="val">20px</span>;
+<span class="prop">border</span>: <span class="val">4px solid #333</span>;
+<span class="prop">padding</span>: <span class="val">30px</span>;</code>
+                    </div>
+                </div>
+                <aside>
+                    <div style="border: 2px dashed #e74c3c; padding: 20px;">
+                        <div class="box-model-demo">CONTEÚDO</div>
+                    </div>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Vermelho = Margin | Azul/Verde = Padding</p>
+                </aside>
+            </article>
+        </section>
+
+        <section id="flexbox">
+            <div class="card-header">
+                <strong>02. Alinhamento com Flexbox</strong>
+                <span style="color: #888;">Tag: &lt;article&gt;</span>
+            </div>
+            <article>
+                <div class="explicacao">
+                    <h3>display: flex;</h3>
+                    <p>Como alinhar itens profissionalmente sem usar "floats".</p>
+                    <ul>
+                        <li><strong>justify-content:</strong> Alinha horizontalmente.</li>
+                        <li><strong>align-items:</strong> Alinha verticalmente.</li>
+                        <li><strong>gap:</strong> O espaçador moderno.</li>
+                    </ul>
+                    <div class="codigo-box">
+                        <code><span class="prop">display</span>: <span class="val">flex</span>;
+<span class="prop">justify-content</span>: <span class="val">center</span>;
+<span class="prop">gap</span>: <span class="val">15px</span>;</code>
+                    </div>
+                </div>
+                <aside>
+                    <div class="flex-demo">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                    </div>
+                </aside>
+            </article>
+        </section>
+
+        <section id="responsividade">
+            <div class="card-header">
+                <strong>03. Media Queries</strong>
+                <span style="color: #888;">Tag: &lt;aside&gt;</span>
+            </div>
+            <article>
+                <div class="explicacao">
+                    <h3>@media</h3>
+                    <p>Ajusta seu site para celulares e tablets.</p>
+                    <div class="codigo-box">
+                        <code><span class="prop">@media</span> (max-width: <span class="val">768px</span>) {
+  <span class="prop">flex-direction</span>: <span class="val">column</span>;
+}</code>
+                    </div>
+                </div>
+                <aside>
+                    <div style="border: 4px solid #333; border-radius: 8px; width: 80px; height: 140px; background: white; padding: 10px;">
+                        <div style="background: var(--primaria); height: 15px; margin-bottom: 5px;"></div>
+                        <div style="background: var(--primaria); height: 15px; margin-bottom: 5px;"></div>
+                        <div style="background: var(--primaria); height: 15px;"></div>
+                    </div>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Empilhamento Mobile</p>
+                </aside>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>lembrandofvntech</strong> | Desenvolvido com Semântica HTML5</p>
+    </footer>
+
+</body>
+</html>
